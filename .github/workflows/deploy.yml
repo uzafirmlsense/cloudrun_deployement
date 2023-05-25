@@ -4,12 +4,12 @@ name: Build and Deploy to Cloud Run
 on:
   push:
     branches:
-      - uzafir_deploy
+      - master
 
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID_UZAFIR }}
   RUN_REGION: us-central1
-  SERVICE_NAME: django-admin-uzafir
+  SERVICE_NAME: django-admin-uzafir-cloudrun
   SECRET_KEY: ${{ secrets.DJANGO_SECRET }}
   DB_NAME: ${{ secrets.DB_NAME_UZAFIR }}
   DB_USER: ${{ secrets.DB_USER_UZAFIR }}
@@ -56,11 +56,11 @@ jobs:
             --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:Latest" \
             --platform "managed" \
             --allow-unauthenticated \
-            --set-env-vars "DJANGO_SECRET=$SECRET_KEY_UZAFIR" \
-            --set-env-vars "INSTANCE_UNIX_SOCKET=$SOCKET_NAME_UZAFIR" \
-            --set-env-vars "INSTANCE_CONNECTION_NAME=$INSTANCE_NAME_UZAFIR" \
-            --set-env-vars "DB_NAME=$DB_NAME_UZAFIR" \
-            --set-env-vars "DB_USER=$DB_USER_UZAFIR" \
-            --set-env-vars "DB_PASS=$DB_PASS_UZAFIR"
+            --set-env-vars "DJANGO_SECRET=$SECRET_KEY" \
+            --set-env-vars "INSTANCE_UNIX_SOCKET=$SOCKET_NAME" \
+            --set-env-vars "INSTANCE_CONNECTION_NAME=$INSTANCE_NAME" \
+            --set-env-vars "DB_NAME=$DB_NAME" \
+            --set-env-vars "DB_USER=$DB_USER" \
+            --set-env-vars "DB_PASS=$DB_PASS"
         
         
