@@ -7,15 +7,15 @@ on:
       - master
 
 env:
-  PROJECT_ID: ${{ secrets.PROJECT_ID_UZAFIR }}
+  PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
   SERVICE_NAME: django-admin-uzafir-cloudrun
   SECRET_KEY: ${{ secrets.DJANGO_SECRET }}
-  DB_NAME: ${{ secrets.DB_NAME_UZAFIR }}
-  DB_USER: ${{ secrets.DB_USER_UZAFIR }}
-  DB_PASS: ${{ secrets.DB_PASS_UZAFIR }}
-  INSTANCE_NAME: ${{ secrets.INSTANCE_NAME_UZAFIR }}
-  SOCKET_NAME: ${{ secrets.SOCKET_NAME_UZAFIR }}
+  DB_NAME: ${{ secrets.DB_NAME }}
+  DB_USER: ${{ secrets.DB_USER }}
+  DB_PASS: ${{ secrets.DB_PASS }}
+  INSTANCE_NAME: ${{ secrets.INSTANCE_NAME }}
+  SOCKET_NAME: ${{ secrets.SOCKET_NAME}}
 
 jobs:
   setup-build-deploy:
@@ -30,8 +30,8 @@ jobs:
       - name: Connect to gcloud
         uses: google-github-actions/setup-gcloud@v0
         with:
-          service_account_key: ${{ secrets.SERVICE_ACCOUNT_UZAFIR }}
-          project_id: ${{ secrets.PROJECT_ID_UZAFIR }}
+          service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
+          project_id: ${{ secrets.PROJECT_ID }}
       
       
       # Build and push image to Google Container Registry
