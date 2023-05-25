@@ -1,0 +1,8 @@
+deploy_env/
+.idea/
+.env
+__pycache__/
+static/
+
+/__pycache__/
+
