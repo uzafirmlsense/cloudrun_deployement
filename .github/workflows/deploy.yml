@@ -59,6 +59,7 @@ jobs:
             --set-env-vars "DJANGO_SECRET=$SECRET_KEY" \
             --set-env-vars "INSTANCE_UNIX_SOCKET=$SOCKET_NAME" \
             --set-env-vars "INSTANCE_CONNECTION_NAME=$INSTANCE_NAME" \
+            --set-env-vars "SOCKET_NAME=$SOCKET_NAME" \
             --set-env-vars "DB_NAME=$DB_NAME" \
             --set-env-vars "DB_USER=$DB_USER" \
             --set-env-vars "DB_PASS=$DB_PASS"
