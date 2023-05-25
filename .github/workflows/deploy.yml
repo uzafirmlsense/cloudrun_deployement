@@ -35,10 +35,10 @@ jobs:
       
       
       # Build and push image to Google Container Registry
-      - name: Delete-Image
-        run: |-
-          gcloud auth configure-docker
-          gcloud container images delete gcr.io/$PROJECT_ID/$SERVICE_NAME:Latest --quiet
+      # - name: Delete-Image
+      #   run: |-
+      #     gcloud auth configure-docker
+      #     gcloud container images delete gcr.io/$PROJECT_ID/$SERVICE_NAME:Latest --quiet
       
       - name: Build
         run: |-
