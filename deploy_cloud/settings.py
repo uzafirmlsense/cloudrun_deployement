@@ -77,7 +77,7 @@ DATABASES = {
         'HOST': os.environ.get('SOCKET_NAME')
     }
 }
-
+print((DATABASES))
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
